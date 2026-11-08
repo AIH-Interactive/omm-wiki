@@ -27,7 +27,6 @@ title: OmniMorph Wiki
 - **YSM 与 Molang**：YSM 几何、动画控制器、Molang 表达式、纹理、声音、控件与动作轮盘。
 - **Lua 新接口**：`ysm_model`、`ysm_actions`、`avatar_controls`、`cosmetic_state`、`cosmetic_animations`，以及自定义粒子、拖尾与动态光源。
 - **多人同步**：资源分发与动态状态同步，支持 Protobuf 与 Figura Cloud 协议。
-- **可选硬件加速**：自动 / 仅 SIMD / GPU，失败时回退 Java。
 
 ## 文档状态说明
 

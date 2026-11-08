@@ -32,7 +32,6 @@ title: OmniMorph 功能
 ## 渲染与设置
 
 - [第一人称、光影与动态光源](/omnimorph/rendering)：相机相对姿态、Iris、LambDynamicLights。
-- [硬件加速](/omnimorph/hardware-acceleration)：自动 / 仅 SIMD / GPU 与回退。
 - [设置项说明](/omnimorph/settings)：目录、网络、缓存、音量、界面。
 - [常见问题与排错](/omnimorph/troubleshooting)：模型、云端、装饰、粒子、崩溃。
 - [从 Figura 迁移](/omnimorph/migration)：迁移步骤、兼容性与回滚。

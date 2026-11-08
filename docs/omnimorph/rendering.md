@@ -78,5 +78,4 @@ title: 第一人称、光影与动态光源
 
 - [脚本新特性](/scripting)
 - [粒子动态光源](/scripting/dynamic-lights)
-- [硬件加速](/omnimorph/hardware-acceleration)
 - [常见问题与排错](/omnimorph/troubleshooting)

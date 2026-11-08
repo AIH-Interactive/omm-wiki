@@ -39,16 +39,6 @@ title: 设置项说明
 
 该增益与游戏玩家音量、模型音量权限叠加，对正在播放的声音生效。
 
-## 硬件加速
-
-| 设置 | 说明 |
-| --- | --- |
-| **启用硬件加速** | 默认关闭；应用后检测硬件 |
-| **加速方式** | 自动 / 仅 SIMD / GPU |
-| **当前状态** | 只读显示实际模式与回退原因 |
-
-详见[硬件加速](/omnimorph/hardware-acceleration)。
-
 ## 动作轮盘
 
 | 设置 | 说明 |
@@ -88,5 +78,4 @@ title: 设置项说明
 
 - [安装与启动](/start_here/Install)
 - [目录、配置与迁移](/start_here/Directories)
-- [硬件加速](/omnimorph/hardware-acceleration)
 - [云端同步](/omnimorph/sync)

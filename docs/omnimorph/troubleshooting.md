@@ -75,12 +75,11 @@ title: 常见问题与排错
 1. 记录崩溃前的操作与模型。
 2. 查看 `logs/latest.log` 与崩溃报告。
 3. 移出最近加入的模型/装饰，确认是否复现。
-4. 如果与光影/GPU 有关，先关闭光影或硬件加速对比。
+4. 如果与光影/GPU 有关，先关闭光影对比。
 5. 提交问题时附上：OmniMorph 版本、Minecraft/Fabric/Java 版本、日志、复现步骤。
 
 ## 性能问题
 
-- 关闭硬件加速对比；
 - 降低粒子/拖尾/光源数量；
 - 检查模型复杂度与纹理尺寸；
 - 光影下自定义粒子成本更高；
@@ -104,4 +103,3 @@ title: 常见问题与排错
 - [安装与启动](/start_here/Install)
 - [目录、配置与迁移](/start_here/Directories)
 - [云端同步](/omnimorph/sync)
-- [硬件加速](/omnimorph/hardware-acceleration)
