@@ -60,6 +60,10 @@ log(particle:getRenderMode())
 - **LAYERED**：多层，每层可独立纹理/UV/颜色/混合；
 - **RIBBON**：拖尾，见[拖尾 Ribbon](/scripting/ribbon)。
 
+## 显式几何
+
+包含开发提交 `573ec549` 的构建还支持 `setQuad` / `getQuad` 和 `setQuads`，可用于独立宽高、三轴旋转、非对称四边形与逐顶点 RGBA。参数、预算和清空语义见[通用矩阵、材质与粒子几何](/scripting/native-geometry)。
+
 ## 精灵图
 
 `setSpriteSheet` 接受表：

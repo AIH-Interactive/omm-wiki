@@ -25,6 +25,7 @@ title: 脚本新特性
 | [`cosmetic_animations`](/scripting/cosmetic-animations) | 否 | 是 | 装饰动画事件 |
 | [`cosmetic_player`](/scripting/cosmetic-player) | 否 | 是 | 只读穿戴者查询 |
 | [`particles` 扩展](/scripting/custom-particles) | 是 | 是 | 自定义粒子、拖尾、光源 |
+| [通用矩阵、材质与粒子几何](/scripting/native-geometry) | 是 | 是（本实例对象） | TRS/蒙皮/动画边界、shader 材质、仿射与逐顶点四边形 |
 
 装饰脚本运行在受限环境中，不会暴露其他作者的 Avatar、主机权限或全局玩家轮盘。
 
