@@ -16,6 +16,44 @@ import TabItem from '@theme/TabItem'
 
 ---
 
+## OMM 旋转组合
+
+### <code>composeEulerXYZ()</code> {#composeEulerXYZ}
+
+**适用版本：OMM 1.0.0-alpha.12（26.1.2），新增于 dev 构建 `826b6c21`。**
+
+```lua
+local rotation = matrices.composeEulerXYZ(first, second)
+```
+
+将两组 XYZ 欧拉旋转按 `R(first) * R(second)` 组合，返回一组等价的规范 XYZ 欧拉角。
+输入和返回值均为以度为单位的 `Vector3`。函数不修改输入，使用 float32 四元数计算。
+等价旋转可以有不同的欧拉角表示，比较旋转效果时应比较变换后的方向或矩阵。
+
+| 参数 | 类型 | 说明 |
+| --- | --- | --- |
+| `first` | `Vector3` | 基础 XYZ 旋转，单位为度 |
+| `second` | `Vector3` | 右乘的局部 XYZ 调整，单位为度 |
+| 返回值 | `Vector3` | 组合后的规范 XYZ 旋转，单位为度 |
+
+两个输入都必需，所有分量必须能表示为有限 float。缺少参数、NaN、无穷大或超出 float 范围会产生 Lua 错误。
+
+可用于任何模型或装饰的局部倾斜、关节调整和动画叠加：
+
+```lua
+local base = vectors.vec3(10, 20, 30)
+local adjustment = vectors.vec3(0, 45, 0)
+local rotation = matrices.composeEulerXYZ(base, adjustment)
+local matrix = matrices.xRotation4(rotation.x)
+    :rightMultiply(matrices.yRotation4(rotation.y))
+    :rightMultiply(matrices.zRotation4(rotation.z))
+```
+
+将得到的 `matrix` 传给目标部件的 `setMatrix`，即可应用这个 XYZ 组合。示例不依赖特定模型名称、贴图、资源格式或运行密钥。
+
+---
+
+
 ## Matrix2
 
 ### <code>mat2()</code> \{#mat2}

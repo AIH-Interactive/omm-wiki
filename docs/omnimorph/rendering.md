@@ -79,3 +79,7 @@ title: 第一人称、光影与动态光源
 - [脚本新特性](/scripting)
 - [粒子动态光源](/scripting/dynamic-lights)
 - [常见问题与排错](/omnimorph/troubleshooting)
+
+## XYZ 旋转组合
+
+OMM alpha.12 的更新构建提供通用的 [`matrices.composeEulerXYZ`](/globals/Matrices#composeEulerXYZ)，可为任意模型和装饰组合基础姿态与局部旋转调整。参数、旋转顺序、精度和示例见函数文档。
