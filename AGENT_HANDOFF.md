@@ -1,3 +1,11 @@
+# 当前检查点：四边形集合矩阵变换
+
+2026-11-15：OMM dev 27858c6d707a2a27b5373a6b379e49888b262a0a已验证推送，alpha.12新增Particle:setQuadsTransform(Matrix4,Matrix3)，复用setQuads已复制顶点、原生包围盒/配额/清理；绝对变换、nil单位矩阵、RGBA保留，新setQuad/setQuads清除结果。独立JOML/实际顶点缓冲及2048顶点默认预算测试通过（更新37条Lua指令），既有粒子/材质回归和Fabric/NeoForge构建通过。游戏视觉MANUAL/PENDING。转换器共同图层消费者仍待接入，不将API测试等同完整特效完成。
+
+Wiki在native-geometry新增小节和已测示例，基线更新27858c6d，生产构建通过。静态包D:/UserData/Desktop/Project/OMP/psf2figura/dist/omm-wiki-alpha.12-quads-transform-dist-20261115.zip：8961955bytes，686文件/194HTML，1186本地资源引用无缺失，根index，CRC PASS；SHA256=86324fd22166955ce0fa4d25d084548a4861a9196864cca9fd47042eaf5e164f。构建/包日志在转换器reports/p4-quads-transform-wiki-build.log、p4-quads-transform-wiki-package.log。本文与页面提交推送main；原有pnpm-workspace.yaml保留不提交，旧静态ZIP保留。主转换器仍P4，P5未开始，后续保持既定推送/静态包交付流程。
+
+以下为较早记录。
+
 # 当前检查点：通用材质深度比较选项
 
 2026-11-15：OMM dev已推送546123a8db9a4ae68adeda910e0dbb9376bad850，alpha.12通用setShaderMaterial增加depth_test，默认true，与depth_write独立；GUI淡出保留比较并关闭写入。源配置到实际Figura ZIP原生pipeline契约、默认/关闭/独立写入/淡出测试及既有粒子/材质回归通过，Fabric/NeoForge构建通过；游戏视觉MANUAL/PENDING。

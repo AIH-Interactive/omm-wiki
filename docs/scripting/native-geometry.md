@@ -161,10 +161,30 @@ particle:setQuads({ {
 
 接口本身不存储拖尾历史，也不解析任何引擎配置。装饰脚本可以自行组织历史点、宽度/颜色曲线，再将结果交给原生提交路径；基础需求可继续使用已有 [Ribbon](/scripting/ribbon)。
 
+## 四边形集合变换
+
+alpha.12 的 OMM dev 提交 `27858c6d` 新增 `particle:setQuadsTransform(position, uv)`。先通过 `setQuads` 提交几何，再用一个位置 `Matrix4` 和一个 UV `Matrix3` 更新整组顶点，避免每帧在 Lua 中重建顶点表。
+
+位置矩阵作用于粒子位置之外的原始世界单位偏移；UV 矩阵作用于原始顶点 UV，随后仍使用粒子已有的图层/精灵裁剪。两者都必须为有限的仿射矩阵，结果位置须可表示为有限 float，结果 UV 必须在 `0..1`。RGBA 不受矩阵影响，仍与粒子/图层颜色相乘。
+
+```lua
+-- 在上节 particle:setQuads(...) 提交几何之后：
+particle:setQuadsTransform(
+    matrices.yRotation4(30):rightMultiply(matrices.scale4(0.5, 2, 1)),
+    matrices.mat3(vectors.vec3(0.5, 0, 0), vectors.vec3(0, 0.5, 0), vectors.vec3(0.25, 0.1, 1))
+)
+-- 恢复 setQuads 保存的原始位置和 UV：
+particle:setQuadsTransform(nil, nil)
+```
+
+这是绝对变换，每次都从 `setQuads` 的已复制源顶点计算，不与上次结果累乘。每个 `nil` 参数表示单位矩阵；矩阵输入和输出几何为独立快照，之后修改输入矩阵不会改变已设置的结果。没有 `setQuads` 源几何时调用会报错；新的 `setQuad`/`setQuads` 清除变换结果。Ribbon 继续使用自身几何。
+
+变换后的包围盒、顶点/面配额、纹理所有权和清理沿用原生路径，不增加预算。原生缓冲契约验证了重复变换、RGBA/UV、重置及冻结帧；2048 顶点用例的单次更新为 37 条 Lua 指令，使用原有渲染预算。该数值是此用例的测量结果，游戏画面仍需实机验证。
+
 ## 验证与模板
 
 这些接口已通过原生 ZIP 加载、独立数学/实际顶点缓冲、预算及资源释放测试。材质也有独立 shader/窗口验证记录；完整游戏画面、真实宿主与 Mixin 环境仍需实机验收，不能用离线结果替代。
 
 后续装饰品模板将分别覆盖适用的新能力，包含源码、参数与 API 覆盖表；需要贴图时采用自绘 SVG 转 PNG 并附 SVG。模板不依赖特定模型、转换器输入或参考引擎密钥。
 
-实现基线：[OmniMorph dev `573ec549`](https://github.com/AIH-Interactive/omni-morph/commit/573ec54930e508f3e80ee2f1aaebb83f709aa7bc)。
+实现基线：[OmniMorph dev `27858c6d`](https://github.com/AIH-Interactive/omni-morph/commit/27858c6d707a2a27b5373a6b379e49888b262a0a)。
