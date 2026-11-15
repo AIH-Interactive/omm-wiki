@@ -185,7 +185,13 @@ particle:setQuadsTransform(nil, nil)
 
 alpha.12 dev `36144357` 在 `setLayers` 的每层声明中增加 `order`（整数 −128–127，默认 0）与 `depth_test`（布尔值，默认 true）。优先级从小到大，再按图层索引排序；不通过额外图层或修改顶点深度模拟顺序。关闭比较后仍不写深度。固定四边形、逐顶点几何、Ribbon 和普通自定义粒子共用这套层声明。
 
-参数、示例及世界/预览排序范围见[自定义粒子：图层](/scripting/custom-particles)。这里是粒子通路的排序控制；转换器模型帧与粒子的共同消费者仍在接入，不能将接口验证等同完整场景合成验收。
+参数、示例及世界/预览排序范围见[自定义粒子：图层](/scripting/custom-particles)。排序范围是当前自定义粒子通路；普通模型继续使用其绘制阶段。
+
+## 双面与透明度截断
+
+alpha.12 dev `3ce393c3` 的 `setLayers` 还支持 `cull` 和 `alpha_cutoff`。默认沿用原生背面剔除与 `0.1` 透明度截断；设置 `cull=false` 可双面绘制，截断阈值接受 `0..1` 的有限数值。固定四边形、逐顶点几何与 Ribbon 使用相同声明，详见[自定义粒子图层示例](/scripting/custom-particles)。
+
+原生缓冲/管线契约验证了参数传递、旧默认值与非法输入；实际 Minecraft include 展开后的默认及三个阈值 shader 在可见 Windows OpenGL 窗口编译通过。完整游戏场景和光影包效果仍需实机验证。
 
 ## 验证与模板
 
@@ -193,4 +199,4 @@ alpha.12 dev `36144357` 在 `setLayers` 的每层声明中增加 `order`（整�
 
 后续装饰品模板将分别覆盖适用的新能力，包含源码、参数与 API 覆盖表；需要贴图时采用自绘 SVG 转 PNG 并附 SVG。模板不依赖特定模型、转换器输入或参考引擎密钥。
 
-实现基线：[OmniMorph dev `36144357`](https://github.com/AIH-Interactive/omni-morph/commit/361443570ef46413258b3776cea1d3780fb9f86a)。
+实现基线：[OmniMorph dev `3ce393c3`](https://github.com/AIH-Interactive/omni-morph/commit/3ce393c358aa6ed5be934b86c343e5c9b9dec142)。

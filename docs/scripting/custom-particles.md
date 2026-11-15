@@ -119,6 +119,8 @@ particle:setLayers({
 | `emissive` | 是否自发光 |
 | `order` | 整数 −128–127，默认 0；自定义粒子间优先级，小值先画，再按层索引 |
 | `depth_test` | 布尔值，默认 true；false 关闭深度比较，所有自定义层仍不写深度 |
+| `cull` | 布尔值，默认沿用原生剔除（当前为 true）；false 双面绘制 |
+| `alpha_cutoff` | 有限数值 0–1，默认 0.1；片元 alpha 低于此值时丢弃 |
 
 `setBlendMode(mode)` 设置基础层混合模式；Layered 各层由 `blend` 决定。
 
@@ -130,6 +132,16 @@ particle:setLayers({
     { blend = "additive", order = -3, emissive = true },
 })
 ```
+
+alpha.12 dev `3ce393c3` 增加 `cull` / `alpha_cutoff`，省略时保留原有原生管线。需要双面和柔和透明边缘时，可使用：
+
+```lua
+particle:setLayers({
+    { blend = "alpha", cull = false, alpha_cutoff = 0.001 },
+})
+```
+
+自定义阈值使用当前 Avatar 纹理及 Minecraft 原生雾化/uniform 接口。非默认阈值与其他层状态组合共享 4096 项缓存；达到上限后仍可复用已有组合和原有固定状态，新的阈值组合会报错。此设置不调整顶点、面或图层预算。
 
 上例第二层先绘制，因为显式优先级先于声明索引。省略两个新字段时沿用原有管线；UV、颜色、纹理所有权、图层数/顶点/面预算不变。字段通过类型与范围校验后才替换图层，非法声明不会替换当前图层。
 

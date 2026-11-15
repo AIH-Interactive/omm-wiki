@@ -1,3 +1,11 @@
+## 2026-11-15：粒子层剔除与透明度截断已完成
+
+OMM dev 3ce393c358aa6ed5be934b86c343e5c9b9dec142 已推送。custom-particles/native-geometry 两页新增 cull 与 alpha_cutoff，适用 1.0.0-alpha.12；默认保留原生剔除和 0.1 阈值，支持独立通用配置，无 PSF/key 依赖。
+
+生产构建成功。静态包：D:/UserData/Desktop/Project/OMP/psf2figura/dist/omm-wiki-alpha.12-particle-raster-dist-20261115.zip；8957901 bytes，686 文件、194 HTML、1186 本地资源引用无缺失，根 index.html、CRC PASS。SHA256：1792ad7be7b8036e2cb7a0d54e15b3b6d375ad370a89846b41602dd146e727e3。可直接托管解压后的根目录。未部署线上。
+
+此次提交仅两页 API 文档及本记录，保留原有未跟踪 pnpm-workspace.yaml。游戏/Iris 实机视觉 MANUAL/PENDING；真实 Windows OpenGL 已验证四个阈值着色器编译链接。当前 P4 尚未完成，后续混合排序与完整原包验收继续在转换器项目进行。
+
 # 当前检查点：粒子层绘制优先级与深度
 
 2026-11-15：OMM dev361443570ef46413258b3776cea1d3780fb9f86a已推送，alpha.12的setLayers每层增加order整数-128..127默认0、depth_test布尔默认true。优先级先于层索引；世界排序辅助函数只交换custom槽位，预览也按此排序；关闭比较但仍不写深度。默认管线保持原对象，有界变体缓存，动态与reload的Iris映射均保留。原生Lua/缓冲/优先级边界/原版槽位/深度/缓存测试及既有粒子材质回归和双加载器构建通过；Iris实机/Mixin/游戏画面MANUAL/PENDING。转换器混合消费者仍待接入。
