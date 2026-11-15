@@ -1,3 +1,11 @@
+# 当前检查点：通用材质深度比较选项
+
+2026-11-15：OMM dev已推送546123a8db9a4ae68adeda910e0dbb9376bad850，alpha.12通用setShaderMaterial增加depth_test，默认true，与depth_write独立；GUI淡出保留比较并关闭写入。源配置到实际Figura ZIP原生pipeline契约、默认/关闭/独立写入/淡出测试及既有粒子/材质回归通过，Fabric/NeoForge构建通过；游戏视觉MANUAL/PENDING。
+
+Wiki仅修改docs/scripting/native-geometry.md材质字段表、说明及示例。生产构建通过，静态包D:/UserData/Desktop/Project/OMP/psf2figura/dist/omm-wiki-alpha.12-depth-dist-20261115.zip已打包验证：8955218bytes，686文件，194HTML，1186本地资源引用无缺失，根index.html，CRC PASS；SHA256=81b06a72fb8dced335b3415b297cdbc2ddbc61838d2f148b5995adcb681bde3f。转换器日志reports/p4-depth-wiki-build.log、p4-depth-wiki-package.log。本文与页面提交推送main；原有pnpm-workspace.yaml保留不提交。后续仍保持mod验证推dev→wiki构建推main→静态ZIP交付流程，旧ZIP不覆盖。转换器P4仍在实施，P5未开始。
+
+以下为较早记录。
+
 # 当前检查点：alpha.12 版本同步
 
 用户最终更正版本为1.0.0-alpha.12。OMM dev版本提交550a5f53f1bc0ead2f6b4a9b87e9e917d8d9af90已推送。Wiki共37处当前适用版本/对应版本标签同步alpha.12，保留历史功能正文；版本页面保留API实现基线573ec549。本文档与标签一同按既定流程提交推送main，原有pnpm-workspace.yaml不提交。

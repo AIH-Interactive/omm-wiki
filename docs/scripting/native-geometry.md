@@ -70,8 +70,11 @@ bone:setMatrix(matrices.translate4(0, 1, 0))
 | `textures`        | sampler 名到当前实例 `Texture` 对象的映射，允许空表 |
 | `blend`           | `OPAQUE`、`ALPHA` 或 `ADDITIVE`，默认 `OPAQUE`      |
 | `cull`            | 是否剔除背面，默认 `false`                          |
+| `depth_test`      | 是否执行深度比较，默认 `true`；`false` 时始终通过   |
 | `depth_write`     | 是否写入深度；默认在 `ALPHA` 时关闭，其他模式开启   |
 | `lightmap`        | 是否启用原生光照贴图，默认 `false`                  |
+
+`depth_test` 与 `depth_write` 独立：关闭比较不自动改变写入设置。GUI 骨骼淡出沿用材质的深度比较设置，同时关闭深度写入。此选项适用于任意模型/装饰的 shader 材质，随 alpha.12 的 OMM dev 提交 `546123a8` 提供；没有特定源格式或模型名称要求。
 
 shader 使用原生矩阵 uniform 和顶点格式；新增属性为 `SecondaryUV`、`MaterialTime`、`MaterialOrigin`。第二 UV 不占用原生 overlay/lightmap 槽，作者法线会进入实际渲染与蒙皮法线计算。shader 源码、纹理和生命周期归当前实例所有；替换和清理仍由模组管理。
 
@@ -104,6 +107,7 @@ void main() { outputColor = vec4(materialColor, 1.0); }
     textures = {},
     blend = "OPAQUE",
     cull = false,
+    depth_test = true,
     depth_write = true,
 })
 part:setMaterialTime(0.75)
