@@ -7,7 +7,7 @@ sidebar_label: ysm_actions（YSM 动作）
 # ysm_actions
 
 > 状态：稳定
-> 适用版本：OmniMorph 1.0.0-alpha.4.1
+> 适用版本：OmniMorph 1.0.0-alpha.12
 > 可用范围：普通脚本、装饰脚本
 
 `ysm_actions` 用来创建、注册、触发和停止 YSM 动作，并管理动作轮盘的页面、槽位与键位绑定。

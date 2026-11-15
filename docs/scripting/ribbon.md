@@ -6,7 +6,7 @@ title: 拖尾 Ribbon
 # 拖尾 Ribbon
 
 > 状态：稳定
-> 适用版本：OmniMorph 1.0.0-alpha.4.1
+> 适用版本：OmniMorph 1.0.0-alpha.12
 > 可用范围：普通脚本、装饰脚本
 
 Ribbon 把粒子的历史轨迹绘制成一条带状拖尾，适合尾巴、飘带、刀光等效果。

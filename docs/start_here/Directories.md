@@ -6,7 +6,7 @@ title: 目录、配置与迁移
 # 目录、配置与迁移
 
 > 状态：稳定
-> 适用版本：OmniMorph 1.0.0-alpha.4.1
+> 适用版本：OmniMorph 1.0.0-alpha.12
 
 本页说明 OmniMorph 的数据目录、配置文件和从 Figura 迁移时的行为。
 

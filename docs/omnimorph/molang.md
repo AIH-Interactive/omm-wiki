@@ -6,7 +6,7 @@ title: Molang 表达式与控制器
 # Molang 表达式与控制器
 
 > 状态：稳定（YSM 运行时）
-> 适用版本：OmniMorph 1.0.0-alpha.5
+> 适用版本：OmniMorph 1.0.0-alpha.12
 
 Molang 是 YSM 模型使用的表达式语言，用来控制动画、姿态、材质与交互。OmniMorph 在客户端内置 Molang 运行时，并把 YSM 的查询、变量与控制器接入游戏状态。
 

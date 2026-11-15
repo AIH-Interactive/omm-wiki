@@ -6,7 +6,7 @@ title: 设置项说明
 # 设置项说明
 
 > 状态：稳定
-> 适用版本：OmniMorph 1.0.0-alpha.4.1
+> 适用版本：OmniMorph 1.0.0-alpha.12
 
 本页说明 OmniMorph 新增或改名的常用设置。原版 Figura 的界面、动作轮盘、纸娃娃、名称显示等设置继续保留。
 

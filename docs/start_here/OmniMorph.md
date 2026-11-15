@@ -6,7 +6,7 @@ title: OmniMorph 是什么
 # OmniMorph 是什么
 
 > 状态：稳定
-> 适用版本：OmniMorph 1.0.0-alpha.5
+> 适用版本：OmniMorph 1.0.0-alpha.12
 
 OmniMorph 是基于 [Figura](https://github.com/FiguraMC/Figura) 的 Minecraft Java 客户端模型模组。它在保留 Figura Avatar、Lua、权限和界面体系的基础上，加入了 **YSM 模型支持**、**统一衣柜**、**装饰与配装**、**模型库与云端同步**等能力。
 

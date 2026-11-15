@@ -7,7 +7,7 @@ sidebar_label: cosmetic_animations（装饰动画）
 # cosmetic_animations
 
 > 状态：稳定
-> 适用版本：OmniMorph 1.0.0-alpha.4.1
+> 适用版本：OmniMorph 1.0.0-alpha.12
 > 可用范围：装饰脚本
 
 `cosmetic_animations` 让装饰脚本指定动作轮盘入口页，并接收当前实例的动画事件。

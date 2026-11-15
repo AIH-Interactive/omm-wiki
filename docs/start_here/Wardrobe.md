@@ -6,7 +6,7 @@ title: 衣柜总览
 # 衣柜总览
 
 > 状态：稳定
-> 适用版本：OmniMorph 1.0.0-alpha.4.1
+> 适用版本：OmniMorph 1.0.0-alpha.12
 
 衣柜是 OmniMorph 的主界面，用来选择、预览、启用和管理形象、装饰与配装。
 

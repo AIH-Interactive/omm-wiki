@@ -6,7 +6,7 @@ sidebar_label: ysm_display（玩家与 YSM 状态）
 
 # ysm_display
 
-> 适用版本：OmniMorph 1.0.0-alpha.5
+> 适用版本：OmniMorph 1.0.0-alpha.12
 
 `ysm_display` 是只读全局接口。方法接受玩家实体对象，例如 `player`，不是玩家名或 UUID。玩家状态来自本地玩家实体或收到的远端玩家发布；非玩家、没有实体或没有收到远端状态时为未知。它不能发布或修改这些值。
 

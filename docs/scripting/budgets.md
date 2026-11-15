@@ -6,7 +6,7 @@ title: 预算与限制
 # 预算与限制
 
 > 状态：稳定
-> 适用版本：OmniMorph 1.0.0-alpha.4.1
+> 适用版本：OmniMorph 1.0.0-alpha.12
 
 OmniMorph 对装饰、粒子、回调、光源与脚本执行设置预算。预算由客户端硬上限与服务器 `outfit.limits` 共同决定，服务器只能收紧。
 

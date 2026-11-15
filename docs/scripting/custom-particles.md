@@ -6,7 +6,7 @@ title: 自定义粒子
 # 自定义粒子
 
 > 状态：稳定（Billboard/Layered）；Ribbon 见单独页面
-> 适用版本：OmniMorph 1.0.0-alpha.4.1
+> 适用版本：OmniMorph 1.0.0-alpha.12
 > 可用范围：普通脚本、装饰脚本
 
 `particles.newCustomParticle` 与 `newTexturedParticle` 创建可精细控制的自定义粒子：多图层、精灵图、渲染模式、运动、回调与动态光源。
@@ -62,7 +62,7 @@ log(particle:getRenderMode())
 
 ## 显式几何
 
-包含开发提交 `573ec549` 的构建还支持 `setQuad` / `getQuad` 和 `setQuads`，可用于独立宽高、三轴旋转、非对称四边形与逐顶点 RGBA。参数、预算和清空语义见[通用矩阵、材质与粒子几何](/scripting/native-geometry)。
+OmniMorph `1.0.0-alpha.12` 支持 `setQuad` / `getQuad` 和 `setQuads`，可用于独立宽高、三轴旋转、非对称四边形与逐顶点 RGBA。参数、预算和清空语义见[通用矩阵、材质与粒子几何](/scripting/native-geometry)。
 
 ## 精灵图
 

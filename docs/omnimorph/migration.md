@@ -6,7 +6,7 @@ title: 从 Figura 迁移
 # 从 Figura 迁移
 
 > 状态：稳定
-> 适用版本：OmniMorph 1.0.0-alpha.4.1
+> 适用版本：OmniMorph 1.0.0-alpha.12
 
 OmniMorph 以 Figura 为基础，绝大多数 Figura 形象、脚本和设置可以继续使用。本页说明迁移时会变化的部分。
 

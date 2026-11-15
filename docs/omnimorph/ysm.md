@@ -6,7 +6,7 @@ title: YSM 模型支持
 # YSM 模型支持
 
 > 状态：稳定（基础加载与动画）；部分高级能力取决于模型与后端
-> 适用版本：OmniMorph 1.0.0-alpha.5
+> 适用版本：OmniMorph 1.0.0-alpha.12
 
 OmniMorph 在保留 Figura 的同时支持 YSM 模型。YSM 模型可以在同一个衣柜中加载、预览、启用，并与 Lua 脚本联动。
 

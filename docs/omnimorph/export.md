@@ -6,7 +6,7 @@ title: 导出为 ZIP
 # 导出为 ZIP
 
 > 状态：稳定
-> 适用版本：OmniMorph 1.0.0-alpha.4.1
+> 适用版本：OmniMorph 1.0.0-alpha.12
 
 “导出为 ZIP”把本地形象或装饰打包，便于备份、分享或迁移到其他设备。
 

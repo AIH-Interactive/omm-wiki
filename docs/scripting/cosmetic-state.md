@@ -7,7 +7,7 @@ sidebar_label: cosmetic_state（装饰状态）
 # cosmetic_state
 
 > 状态：稳定
-> 适用版本：OmniMorph 1.0.0-alpha.4.1
+> 适用版本：OmniMorph 1.0.0-alpha.12
 > 可用范围：装饰脚本
 
 `cosmetic_state` 保存当前装饰实例的标量状态。它只接受布尔、有限数字或短字符串，不能保存表、函数或 Java 对象。

@@ -9,8 +9,8 @@ title: 版本与兼容性
 
 | 项目 | 值 |
 | ------------ | ------------------------- |
-| 文档对应模组 | OmniMorph `1.0.0-alpha.5` |
-| 参考代码     | `omp-ref` 提交 `fda743a`  |
+| 文档对应模组 | OmniMorph `1.0.0-alpha.12` |
+| 参考代码     | `omni-morph dev`（API 实现基线 `573ec549`）  |
 | Minecraft | 26.1.2 |
 | 模组加载器 | Fabric |
 | Java | 25 |
@@ -20,7 +20,7 @@ title: 版本与兼容性
 
 ## 新增接口文档基线
 
-[通用矩阵、材质与粒子几何](/scripting/native-geometry) 对应 26.1.2 开发构建，源码基线为 `AIH-Interactive/omni-morph` 的 `573ec549`。该页只声明已验证的新接口，不将其他历史页面整体标记为新版本。
+[通用矩阵、材质与粒子几何](/scripting/native-geometry) 适用于 `1.0.0-alpha.12` / Minecraft 26.1.2，接口源码基线为 `AIH-Interactive/omni-morph` 的 `573ec549`。适用版本按本次模组构建元数据更新，历史功能介绍保留原有版本语义。
 
 ## 兼容性说明
 

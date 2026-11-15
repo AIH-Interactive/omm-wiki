@@ -7,7 +7,7 @@ sidebar_label: ysm_model（YSM 模型）
 # ysm_model
 
 > 状态：稳定
-> 适用版本：OmniMorph 1.0.0-alpha.5
+> 适用版本：OmniMorph 1.0.0-alpha.12
 > 可用范围：普通脚本、装饰脚本
 
 `ysm_model` 是 YSM 模型的只读/受限控制接口，用来访问部件、定位器、挂点、动画、纹理、动作、控件与子实体。

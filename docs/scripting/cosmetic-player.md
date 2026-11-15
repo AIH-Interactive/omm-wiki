@@ -7,7 +7,7 @@ sidebar_label: cosmetic_player（穿戴者）
 # cosmetic_player
 
 > 状态：稳定
-> 适用版本：OmniMorph 1.0.0-alpha.4.1
+> 适用版本：OmniMorph 1.0.0-alpha.12
 > 可用范围：装饰脚本
 
 装饰脚本中的 `player` / `user` 是只读的穿戴者查询对象，不会暴露其他实体、Avatar 或主机权限。

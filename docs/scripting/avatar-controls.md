@@ -7,7 +7,7 @@ sidebar_label: avatar_controls（模型控件）
 # avatar_controls
 
 > 状态：稳定
-> 适用版本：OmniMorph 1.0.0-alpha.4.1
+> 适用版本：OmniMorph 1.0.0-alpha.12
 > 可用范围：普通脚本（`avatar_controls`）、装饰脚本（`cosmetic_controls`）
 
 `avatar_controls` 用来声明“模型专用设置”的控件、页面与回调。装饰脚本中使用别名 `cosmetic_controls`，方法完全相同。

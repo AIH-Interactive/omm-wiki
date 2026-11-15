@@ -1,3 +1,13 @@
+# 当前检查点：alpha.12 版本同步
+
+用户最终更正版本为1.0.0-alpha.12。OMM dev版本提交550a5f53f1bc0ead2f6b4a9b87e9e917d8d9af90已推送。Wiki共37处当前适用版本/对应版本标签同步alpha.12，保留历史功能正文；版本页面保留API实现基线573ec549。本文档与标签一同按既定流程提交推送main，原有pnpm-workspace.yaml不提交。
+
+Docusaurus生产构建成功，生成新版静态包：D:/UserData/Desktop/Project/OMP/psf2figura/dist/omm-wiki-alpha.12-dist-20261115.zip。8953868bytes，194HTML/686文件，1186本地静态资源引用检查无缺失，CRC通过；SHA256=62246b6575ea1e07d0c541f18279ebdff8de96b499dc0b86907adc89ca0308a3。日志位于转换器reports/p4-alpha12-wiki-build.log、p4-alpha12-wiki-package.log。此前不含alpha.12标签的旧包保留，仅作为历史交付。
+
+当前Wiki版本同步/静态包任务完成；主转换器任务P4拖尾等继续实施，模板仍待完成，实机/Mixin/游戏视觉MANUAL/PENDING。后续保持API推送dev、Wiki同步构建推送main、提供根目录可托管ZIP的流程。
+
+以下为较早记录。
+
 # 当前检查点：通用API文档与可托管静态包
 
 2026-11-15：新增 docs/scripting/native-geometry.md，更新脚本入口、自定义粒子与版本基线。文档覆盖已验证的 compose4/sample4、蒙皮逆绑定、动画边界、shader material/time、setQuad/getQuad/setQuads，源码基线为OMM dev 573ec549。只改接口说明和入口，不升级其他历史页面版本。

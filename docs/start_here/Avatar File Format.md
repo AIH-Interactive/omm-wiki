@@ -10,7 +10,7 @@ import FileTreeNode from '@site/src/components/FileTree/Node';
 # 模型文件格式
 
 > 状态：稳定
-> 适用版本：OmniMorph 1.0.0-alpha.4.1
+> 适用版本：OmniMorph 1.0.0-alpha.12
 
 本页说明 Figura 形象、YSM 模型和装饰在磁盘上的组织形式。模型默认放在 <code>&lt;minecraftDirectory&gt;/omnimorph/avatars</code>，装饰放在 <code>&lt;minecraftDirectory&gt;/omnimorph/cosmetics</code>。
 
