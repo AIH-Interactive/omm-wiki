@@ -1,3 +1,17 @@
+# 当前检查点：通用API文档与可托管静态包
+
+2026-11-15：新增 docs/scripting/native-geometry.md，更新脚本入口、自定义粒子与版本基线。文档覆盖已验证的 compose4/sample4、蒙皮逆绑定、动画边界、shader material/time、setQuad/getQuad/setQuads，源码基线为OMM dev 573ec549。只改接口说明和入口，不升级其他历史页面版本。
+
+文档提交44207c1347de55fccb7f36d5161652cef442f2a9已推送origin/main并核对远端一致。当前分支main；原有未跟踪pnpm-workspace.yaml保留。此交接记录随文档检查点补充提交。
+
+已有依赖下直接node Docusaurus CLI生产构建成功；仅新页面执行Prettier，其余文件保留既有无关格式，git diff --check通过。没有安装/升级依赖。构建提示已有Browserslist数据和Docusaurus更新通知，不影响退出0。
+
+静态dist：D:/UserData/Desktop/Project/OMP/psf2figura/dist/omm-wiki-dist-20261115.zip，根目录包含index.html/页面/assets，可直接静态托管；8957561bytes，686文件，194HTML，1186本地静态资源引用检查无缺失，ZIP CRC通过。SHA256：11571a24f03964bacd941c303bbe236b91d529c70ac12e98b47aa26ef66a529c。报告与日志位于转换器reports/p4-wiki-dist.json、p4-wiki-build.log、p4-wiki-dist-package.log。
+
+用户要求后续保持：API验证推送dev→Wiki同步→生产构建/静态产物检查→提交Wiki main→提供根目录可托管ZIP。装饰品模板最终需覆盖全部适用新增API，含拖尾模板，贴图可SVG自绘转PNG并附SVG；模板尚未交付，由psf2figura任务继续完成。Wiki当前更新/构建/打包无剩余实施；真实Minecraft/模板视觉为MANUAL/PENDING。
+
+以下为历史交接记录。
+
 # Agent 交接记录
 
 ## 当前任务与状态
