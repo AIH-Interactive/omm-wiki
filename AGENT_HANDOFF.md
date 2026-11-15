@@ -1,3 +1,11 @@
+# 当前检查点：粒子层绘制优先级与深度
+
+2026-11-15：OMM dev361443570ef46413258b3776cea1d3780fb9f86a已推送，alpha.12的setLayers每层增加order整数-128..127默认0、depth_test布尔默认true。优先级先于层索引；世界排序辅助函数只交换custom槽位，预览也按此排序；关闭比较但仍不写深度。默认管线保持原对象，有界变体缓存，动态与reload的Iris映射均保留。原生Lua/缓冲/优先级边界/原版槽位/深度/缓存测试及既有粒子材质回归和双加载器构建通过；Iris实机/Mixin/游戏画面MANUAL/PENDING。转换器混合消费者仍待接入。
+
+Wiki修改custom-particles字段/示例及native-geometry说明/基线，构建通过。静态包D:/UserData/Desktop/Project/OMP/psf2figura/dist/omm-wiki-alpha.12-particle-order-dist-20261115.zip：8960254bytes，686文件/194HTML，1186本地资源引用无缺失，根index、CRC PASS；SHA256=4feff0c405fabf42570cc67c405f46cfba420e26f0ac1b0f1419f0fd5c558ccc。日志转换器reports/p4-particle-order-depth-wiki-build.log、p4-particle-order-depth-wiki-package.log。本文与页面提交推送main，pnpm-workspace.yaml保留不提交；旧ZIP保留。后续沿既定验证→推送→静态ZIP流程，主转换器P4仍未完成。
+
+以下为较早记录。
+
 # 当前检查点：四边形集合矩阵变换
 
 2026-11-15：OMM dev 27858c6d707a2a27b5373a6b379e49888b262a0a已验证推送，alpha.12新增Particle:setQuadsTransform(Matrix4,Matrix3)，复用setQuads已复制顶点、原生包围盒/配额/清理；绝对变换、nil单位矩阵、RGBA保留，新setQuad/setQuads清除结果。独立JOML/实际顶点缓冲及2048顶点默认预算测试通过（更新37条Lua指令），既有粒子/材质回归和Fabric/NeoForge构建通过。游戏视觉MANUAL/PENDING。转换器共同图层消费者仍待接入，不将API测试等同完整特效完成。

@@ -117,8 +117,22 @@ particle:setLayers({
 | `alpha` | 0–1 |
 | `blend` | `alpha` / `additive` / `opaque` |
 | `emissive` | 是否自发光 |
+| `order` | 整数 −128–127，默认 0；自定义粒子间优先级，小值先画，再按层索引 |
+| `depth_test` | 布尔值，默认 true；false 关闭深度比较，所有自定义层仍不写深度 |
 
 `setBlendMode(mode)` 设置基础层混合模式；Layered 各层由 `blend` 决定。
+
+alpha.12 的 OMM dev `36144357` 增加 `order` / `depth_test`。优先级独立于每个粒子的层数，不需要用空图层占位。世界粒子排序只交换自定义条目的槽位，保留原版粒子的相对顺序；预览使用相同的优先级，再比较图层索引。新管线有界缓存并沿用 Iris 粒子程序映射；完整光影包效果仍需实机验证。
+
+```lua
+particle:setLayers({
+    { blend = "alpha", order = 7, depth_test = false },
+    { blend = "additive", order = -3, emissive = true },
+})
+```
+
+上例第二层先绘制，因为显式优先级先于声明索引。省略两个新字段时沿用原有管线；UV、颜色、纹理所有权、图层数/顶点/面预算不变。字段通过类型与范围校验后才替换图层，非法声明不会替换当前图层。
+
 
 ## 回调
 
