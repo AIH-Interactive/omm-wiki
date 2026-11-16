@@ -1,3 +1,9 @@
+## 2026-11-16：移除发布页的转换器关联内容（最新状态）
+
+当前任务完成：仅修改 performance-http、settings、native-geometry 三页，移除转换器计划链接、PSF 样本性能记录及转换器关联措辞，保留通用 API 与 OGG 音频教程。源码 docs/src/static 与生产 build 的 PSF/psf2figura 检查无命中，普通“转换器”仅保留 OGG 教程。历史交接记录非发布页面，保留。
+
+生产构建通过（node node_modules/@docusaurus/core/bin/docusaurus.mjs build）；pnpm 启动器因自动依赖检查报 ERR_PNPM_IGNORED_BUILDS，未改依赖，直接执行同一现有构建器成功。静态包 omm-wiki-alpha.12-api-dist-20261116.zip，9060683 bytes、695文件/197 HTML、1204本地资源无缺失、根index/CRC通过；SHA256 c005e2f214231038eae57ade128b0d188c8ee92d94b7a3b23ce1d271c4e1740b。包在主项目 dist，报告 docs/wiki-api-artifact.json。源码本次 main 收尾提交并推送，交付前核对远端一致；保留原有未跟踪 pnpm-workspace.yaml。未部署线上，视觉验收 MANUAL/PENDING。无剩余实施，后续继续生产构建→核验→推送→静态ZIP交付流程。
+
 ## 2026-11-15：粒子层剔除与透明度截断已完成
 
 OMM dev 3ce393c358aa6ed5be934b86c343e5c9b9dec142 已推送。custom-particles/native-geometry 两页新增 cull 与 alpha_cutoff，适用 1.0.0-alpha.12；默认保留原生剔除和 0.1 阈值，支持独立通用配置，无 PSF/key 依赖。

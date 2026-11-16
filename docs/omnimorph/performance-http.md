@@ -50,7 +50,7 @@ title: Debug 性能 HTTP 快照
 
 计数不是“每请求新增指令数”。它可能来自较早完成的tick/渲染调用；以指标自己的`frame/tick/ageMs`判断新鲜度，不把`capturedFrame`强行填作计数帧。尚未在Debug下观测的通道返回`not_collected`。原生超限时无法可靠回写的计数返回`unavailable_after_limit`。加载新代次会失效旧遥测样本，但不重置实际计费。
 
-GPU时间、Lua渲染wall time、draw calls、Lua私有发射器数、拖尾历史样本数和shader编译计数首版为null/`not_collected`。完整候选指标及其可能来源仍见[P4.5候选指标](https://github.com/AIH-Interactive/psf2figura/blob/main/docs/p4.5-performance-http-plan.md)，候选不表示已实现。服务不因缺少这些观测点而启动持续profiler。
+GPU时间、Lua渲染wall time、draw calls、Lua私有发射器数、拖尾历史样本数和shader编译计数首版为null/`not_collected`。服务不因缺少这些观测点而启动持续profiler。
 
 `references`还提供模组版本、Debug状态、实际端点、初始化与渲染的基础/最高配置及自适应开关。P95/P99、趋势和前后对比由调用方在相同模型、代次和场景下计算。
 
