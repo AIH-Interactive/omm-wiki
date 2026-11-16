@@ -76,3 +76,5 @@ end
 - [`cosmetic_state`](/scripting/cosmetic-state)
 - [`cosmetic_animations`](/scripting/cosmetic-animations)
 - [装饰系统](/omnimorph/cosmetics)
+
+- [装饰相机与纹理](/scripting/cosmetic-rendering)
