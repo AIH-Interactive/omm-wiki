@@ -23,6 +23,7 @@ sidebar_label: cosmetic_player（穿戴者）
 | `getVelocity()` | `Vector3` | 速度 |
 | `isLoaded()` | 布尔 | 实体是否仍存在 |
 | `isSneaking()` | 布尔 | 是否潜行 |
+| `isSprinting()` | 布尔 | 是否疾跑；alpha.12 起可用 |
 | `isOnGround()` | 布尔 | 是否着地 |
 | `getPose()` | 字符串 | 姿态 |
 | `getHealth()` | 数字 | 生命值（非生物为 0） |
@@ -39,6 +40,20 @@ function events.tick()
     models.MyCosmetic:setVisible(visible)
 end
 ```
+
+### 区分静止、行走和疾跑
+
+```lua
+function events.tick()
+    if not player:isLoaded() then return end
+    local velocity = player:getVelocity()
+    local moving = velocity.x * velocity.x + velocity.z * velocity.z > 0.0001
+    local action = moving and (player:isSprinting() and "run" or "walk") or "idle_game"
+    -- 将 action 交给本装饰的动画选择逻辑。
+end
+```
+
+`isSprinting()` 只读取当前穿戴者的布尔状态，不暴露实体引用或修改能力。生成 ZIP 的实际 TICK 回归通过受限包装验证静止 → 行走 → 疾跑 → 静止及特效时钟连续性。
 
 ## 与普通 player API 的差异
 
