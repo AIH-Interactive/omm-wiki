@@ -1001,6 +1001,51 @@ myAnim:newCode(0.5, "log('Hello World')")
 
 ---
 
+## 独立采样局部姿态 {#sample}
+
+适用版本：OmniMorph `1.0.0-alpha.12`。
+
+```lua
+local matrix = animation:sample(part, seconds)
+```
+
+| 参数 / 返回 | 类型 | 说明 |
+| --- | --- | --- |
+| `part` | ModelPart | 此动画绑定的部件，按部件实例识别 |
+| `seconds` | Number | 有限 float 范围内的秒数，不自动循环 |
+| 返回值 | Matrix4 / nil | 包含作者变换和此动画的局部矩阵；未绑定部件返回 nil |
+
+使用原生 Linear/Catmull-Rom/Bezier/Step 插值、PRE/POST 边界和动画当前 blend。仅采样此动画，不混入其他动画的实时通道；返回值未乘父级或世界矩阵。部件现有位置、枢轴、作者旋转/缩放及偏移仍计入结果。数值关键帧按原规则钳制到端点；Molang 的 `query.anim_time` 使用传入的秒数，其他游戏查询仍读取当前上下文。
+
+采样不改变部件当前动画通道、播放时间或播放状态，不触发时间轴事件。Lua 关键帧仍会执行其表达式，因此表达式本身应避免副作用；从 Lua 调用采样时继承该次调用的 VM 额度和服装共享账本，不能借此重置计数。Lua 表达式中的动画对象仍表示当前播放状态。
+
+适用于拖尾历史、挂点、路径预览及任意模型的姿态计算；不依赖特定装饰、格式、模型名或参考引擎。循环和父级组合由调用者选择。
+
+**可运行示例：** 在包含绑定部件的动画模型中查找首个可采样部件，不改变模型姿态。
+
+```lua
+-- Generic local-pose sampling: no playback, model pose, or timeline event changes.
+local clip = assert(animations:getAnimations()[1], "Load a model containing an animation")
+assert(type(clip.sample) == "function", "Requires OmniMorph alpha.12 pose sampling")
+
+local function find_sample(part)
+    local matrix = clip:sample(part, 0.25)
+    if matrix then
+        local point = matrix:apply(0, 0, 0)
+        assert(point.x == point.x and point.y == point.y and point.z == point.z)
+        return matrix
+    end
+    for _, child in pairs(part:getChildren()) do
+        local sampled = find_sample(child)
+        if sampled then return sampled end
+    end
+end
+
+assert(find_sample(models), "The animation must bind at least one model part")
+```
+
+---
+
 ## 字段
 
 ### <code>name</code> \{#name}
