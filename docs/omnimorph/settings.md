@@ -99,3 +99,8 @@ title: 设置项说明
 - [安装与启动](/start_here/Install)
 - [目录、配置与迁移](/start_here/Directories)
 - [云端同步](/omnimorph/sync)
+
+
+## Debug 性能数据 HTTP 服务
+
+alpha.12起，Debug开启时自动运行本机只读服务；性能栏的端口输入框默认18081，范围1～65535。每次请求只获取一次最新JSON，关闭Debug即停止。详见[快照字段与口径](/omnimorph/performance-http)和[Python/CSV采集工具](/omnimorph/performance-capture)。
