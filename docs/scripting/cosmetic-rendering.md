@@ -42,5 +42,3 @@ end
 ```
 
 读取已有贴图时可遍历 `textures:getTextures()` 并调用纹理的 `getName()` / `getDimensions()`。创建的句柄可交给本实例粒子与材质；实例卸载时由既有资源路径清理。第一/第三人称和预览均读取各自当前本机相机。
-
-实际生成 ZIP 已在真实装饰沙箱中加载，并验证原生模型、穿戴者、相机与纹理接口可被注册的 TICK/RENDER 消费；游戏画面为 MANUAL/PENDING。

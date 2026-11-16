@@ -6,7 +6,7 @@ title: 性能快照 CSV 采集
 
 工具：`tools/performance_capture.py`，仅使用 Python 标准库。所有运行参数集中在 `tools/performance_capture.json`，也可用 `--config` 指定另一份配置。
 
-P4.5 内置 HTTP 服务适用于OMM alpha.12：开启Debug模式，在性能设置中配置端口，默认地址为配置示例。实际字段和计数口径见[HTTP快照契约](/omnimorph/performance-http)。已验证真实服务到Python/CSV链路；游戏画面仍为MANUAL/PENDING。
+内置 HTTP 服务适用于OMM alpha.12：开启Debug模式，在性能设置中配置端口，默认地址为配置示例。实际字段和计数口径见[HTTP快照契约](/omnimorph/performance-http)。
 
 ## 配置文件
 
@@ -26,7 +26,7 @@ P4.5 内置 HTTP 服务适用于OMM alpha.12：开启Debug模式，在性能设�
 | `csv_path` | 完整 CSV 路径模板，包含模型名、类型、时间戳三个占位符；相对路径以配置文件所在目录为基准 |
 | `interval_ms` | 每次记录完成后，到下次请求前等待的**毫秒数**；500 表示0.5秒 |
 | `timeout_ms` | 单次请求超时，单位同样是毫秒 |
-| `request_count` | 计划请求次数，正整数；设为1时只采集一条 |
+| `request_count` | 请求次数，正整数；设为1时只采集一条 |
 
 ## 调用
 

@@ -1,3 +1,9 @@
+## 2026-11-16：公开文档清理计划与开发过程记录（最新状态）
+
+用户要求 Wiki 仅保留功能文档，不掺入计划。已移除未来模板承诺、P4.5阶段编号、迁移进度、开发验收/MANUAL记录及实现基线段落；保留当前 API、示例、版本与实际使用限制，未开放功能按当前不可用范围描述。15页最小文字修改，无功能或依赖变更。计划和交接仅保留非发布记录，不进入 docs/src/static。
+
+生产构建成功；最终静态包 omm-wiki-alpha.12-clean-docs-dist-20261116.zip，9051069 bytes、695文件/197 HTML、1204资源引用无缺失，根index/CRC通过，SHA256 22cc5dbcd35eb845f304628440fd30a06fc4f63910907b75bcd0009962660375。静态页面及搜索索引中 PSF/psf2figura/MANUAL/PENDING/P4.5/模板计划等清理检查无命中。主项目 docs/wiki-clean-docs-artifact.json 记录校验。main 本次收尾提交推送后核对远端，原未跟踪 pnpm-workspace.yaml 保留；未部署线上，视觉 MANUAL/PENDING。无剩余实施，交付应发 clean-docs 新包而非前一版 api 包。
+
 ## 2026-11-16：移除发布页的转换器关联内容（最新状态）
 
 当前任务完成：仅修改 performance-http、settings、native-geometry 三页，移除转换器计划链接、PSF 样本性能记录及转换器关联措辞，保留通用 API 与 OGG 音频教程。源码 docs/src/static 与生产 build 的 PSF/psf2figura 检查无命中，普通“转换器”仅保留 OGG 教程。历史交接记录非发布页面，保留。

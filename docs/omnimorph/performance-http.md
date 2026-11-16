@@ -58,7 +58,6 @@ GPU时间、Lua渲染wall time、draw calls、Lua私有发射器数、拖尾历�
 
 配置`tools/performance_capture.json`后运行Python采集器，详见[采集脚本说明](/omnimorph/performance-capture)。每次请求只写一行，模型选择、选择代次、生效模型或加载代次变化时另起`模型名-类型-时间戳.csv`。间隔为`interval_ms`，单位毫秒；相对CSV路径以配置文件目录为基准。
 
-自动验证使用真实回环HTTP、实际加载Avatar、原计数/共享账本和真实Python CSV写入；游戏内UI、帧画面和渲染耗时对应关系仍为MANUAL/PENDING。
 
 
 采集脚本与配置：[performance_capture.py](https://github.com/AIH-Interactive/omni-morph/blob/dev/tools/performance_capture.py)、[performance_capture.json](https://github.com/AIH-Interactive/omni-morph/blob/dev/tools/performance_capture.json)。

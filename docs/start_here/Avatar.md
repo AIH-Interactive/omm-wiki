@@ -26,7 +26,7 @@ title: 创建第一个形象
 | **创建装饰** | 含 `cosmetic.json` 的装饰目录 | 叠加在基础模型上的帽子、尾巴、翅膀等 |
 
 :::note
-以下截图来自旧版界面，仅用于说明按钮位置；OmniMorph 的实际界面以游戏内为准。新版截图待补（MANUAL/PENDING）。
+以下截图来自旧版界面，仅用于说明按钮位置；OmniMorph 的实际界面以游戏内为准。
 :::
 
 <img src={require("@site/static/img/making/pause.png").default} width="800" alt="Minecraft 暂停菜单，右侧有 OmniMorph 入口按钮" />

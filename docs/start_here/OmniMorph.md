@@ -42,7 +42,6 @@ OmniMorph 是基于 [Figura](https://github.com/FiguraMC/Figura) 的 Minecraft J
 
 - 这是客户端模组；多人资源分发与状态同步需要兼容的后端服务。
 - 不同模型格式和版本的能力可能不同；模型自身的脚本、依赖资源、权限与后端策略会影响可用功能。
-- 真实 Minecraft 双客户端、GUI/GPU、光照与性能验收仍以实际测试为准；文档不会把未验证的行为写成“已完成”。
 
 ## 下一步
 

@@ -52,5 +52,3 @@ if states then
     end
 end
 ```
-
-真实多人客户端行为仍待验收。

@@ -189,14 +189,4 @@ alpha.12 dev `36144357` 在 `setLayers` 的每层声明中增加 `order`（整�
 
 ## 双面与透明度截断
 
-alpha.12 dev `3ce393c3` 的 `setLayers` 还支持 `cull` 和 `alpha_cutoff`。默认沿用原生背面剔除与 `0.1` 透明度截断；设置 `cull=false` 可双面绘制，截断阈值接受 `0..1` 的有限数值。固定四边形、逐顶点几何与 Ribbon 使用相同声明，详见[自定义粒子图层示例](/scripting/custom-particles)。
-
-原生缓冲/管线契约验证了参数传递、旧默认值与非法输入；实际 Minecraft include 展开后的默认及三个阈值 shader 在可见 Windows OpenGL 窗口编译通过。完整游戏场景和光影包效果仍需实机验证。
-
-## 验证与模板
-
-这些接口已通过原生 ZIP 加载、独立数学/实际顶点缓冲、预算及资源释放测试。材质也有独立 shader/窗口验证记录；完整游戏画面、真实宿主与 Mixin 环境仍需实机验收，不能用离线结果替代。
-
-后续装饰品模板将分别覆盖适用的新能力，包含源码、参数与 API 覆盖表；需要贴图时采用自绘 SVG 转 PNG 并附 SVG。模板可用于不同模型与装饰。
-
-实现基线：[OmniMorph dev `3ce393c3`](https://github.com/AIH-Interactive/omni-morph/commit/3ce393c358aa6ed5be934b86c343e5c9b9dec142)。
+alpha.12 的 `setLayers` 还支持 `cull` 和 `alpha_cutoff`。默认沿用原生背面剔除与 `0.1` 透明度截断；设置 `cull=false` 可双面绘制，截断阈值接受 `0..1` 的有限数值。固定四边形、逐顶点几何与 Ribbon 使用相同声明，详见[自定义粒子图层示例](/scripting/custom-particles)。
