@@ -534,7 +534,7 @@ avatar:getEntityInitCount()
 
 ### <code>getMaxInitCount()</code> \{#getMaxInitCount}
 
-获取观看者（viewer）允许的初始化阶段最大指令数。OmniMorph `1.0.0-alpha.12` 起返回客户端实际生效的初始化最高上限（默认262144）；禁用或显式低信任权限仍返回其受限额度。可在设置 → 性能中使用基础/最高两个输入框调整。
+获取观看者（viewer）允许的初始化阶段最大指令数。OmniMorph `1.0.0-alpha.12` 起返回客户端实际生效的初始化最高上限（默认2147483647）；禁用或显式低信任权限仍返回其受限额度。可在设置 → 性能中使用基础/最高两个输入框调整。
 
 ```lua
 getMaxInitCount()
